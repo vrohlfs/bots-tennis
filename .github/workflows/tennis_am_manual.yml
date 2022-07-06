@@ -1,4 +1,4 @@
-name: tennis_am_match
+name: tennis_am_match_manual
     
 on: workflow_dispatch
 
