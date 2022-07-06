@@ -31,7 +31,7 @@ driver.get("https://wtc.clubautomation.com/")
 wait = WebDriverWait(driver, 30)
 
 ## Details
-game_date = date.today() + timedelta(days=3)
+game_date = date.today() + timedelta(days=2)
 game_date = game_date.strftime("%m/%d/%Y") 
 
 # Website Login
