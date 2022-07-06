@@ -1,4 +1,5 @@
 ## Import packages
+import os
 from os import times
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
