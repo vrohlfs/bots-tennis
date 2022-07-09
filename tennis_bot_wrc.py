@@ -28,12 +28,18 @@ t = os.environ['CONFIRM_TIME']
 
 ## Driver settings
 options = Options()
-options.binary_location = "/usr/bin/google-chrome"
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+driver = webdriver.Chrome('/home/<user>/chromedriver',chrome_options=chrome_options)
+
 # s = Service(‘Chromedriver PATH')
 # driver = webdriver.Chrome("/usr/local/bin/chromedriver")
 # driver = webdriver.Chrome(ChromeDriverManager().install())
 # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options, executable_path="/usr/local/bin/chromedriver")
+# options.binary_location = "/usr/bin/google-chrome"
+# driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options, executable_path="/usr/local/bin/chromedriver")
 
 actions = ActionChains(driver)
 driver.get("https://wtc.clubautomation.com/")
