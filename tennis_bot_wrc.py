@@ -37,7 +37,10 @@ t = os.environ['CONFIRM_TIME']
 # driver = webdriver.Chrome('/home/<user>/chromedriver',chrome_options=chrome_options)
 
 # try 2
-driver = webdriver.Chrome(ChromeDriverManager().install())
+# driver = webdriver.Chrome(ChromeDriverManager().install())
+
+# try 3
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 # s = Service(‘Chromedriver PATH')
 # driver = webdriver.Chrome("/usr/local/bin/chromedriver")
