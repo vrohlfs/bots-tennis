@@ -27,8 +27,8 @@ t = os.environ['CONFIRM_TIME']
 
 ## Driver settings
 # s = Service(‘Chromedriver PATH')
-# driver = webdriver.Chrome(service=s)
-driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome("/usr/local/bin/chromedriver")
+# driver = webdriver.Chrome(ChromeDriverManager().install())
 actions = ActionChains(driver)
 
 driver.get("https://wtc.clubautomation.com/")
