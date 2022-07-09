@@ -59,11 +59,11 @@ game_date = game_date.strftime("%m/%d/%Y")
 
 # Website Login
 login_form = driver.find_element(By.ID, "caSignInLoginForm")
-un = driver.find_element(By.Name, "login")
+un = driver.find_element(By.NAME, "login")
 un.send_keys(username)
 
 actions.send_keys(Keys.TAB).perform()
-pw = wait.until(EC.visibility_of_element_located((By.NAME,"pass")))
+pw = wait.until(EC.visibility_of_element_located((By.NAME,"password")))
 pw.send_keys(password)
 
 login_form.submit()
@@ -85,11 +85,11 @@ driver.find_element_by_class_name("last-child").click()
 # wait.until(EC.element_to_be_clickable((By.ID,"interval-90"))).click()
 
 # Search for available times
-# From: option[8] = 7:00AM
-selection_From_time = driver.find_element_by_xpath('//*[@id="timeFrom"]/option[8]')
+# From: option[7] = 7:00AM
+selection_From_time = driver.find_element_by_xpath('//*[@id="timeFrom"]/option[7]')
 driver.execute_script("arguments[0].setAttribute('selected', 'selected')", selection_From_time)
-# To: option[24] = 11:00PM
-selection_To_time = driver.find_element_by_xpath('//*[@id="timeTo"]/option[24]')
+# To: option[23] = 11:00PM
+selection_To_time = driver.find_element_by_xpath('//*[@id="timeTo"]/option[23]')
 driver.execute_script("arguments[0].setAttribute('selected', 'selected')", selection_To_time)
 
 ## Click Search
@@ -106,4 +106,4 @@ wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="confirm"]'))).click()
 # close entire browser
 #driver.quit()
 
-print("Win the match now. Ass: your bot!")
+print("Win the match now. From: your tennis bot!")
