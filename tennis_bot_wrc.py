@@ -11,6 +11,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.chrome.service import Service
 
 import time
@@ -27,12 +28,16 @@ t = os.environ['CONFIRM_TIME']
 
 
 ## Driver settings
-options = Options()
-chrome_options = Options()
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--no-sandbox')
-chrome_options.add_argument('--disable-dev-shm-usage')
-driver = webdriver.Chrome('/home/<user>/chromedriver',chrome_options=chrome_options)
+# try 1
+# options = Options()
+# chrome_options = Options()
+# chrome_options.add_argument('--headless')
+# chrome_options.add_argument('--no-sandbox')
+# chrome_options.add_argument('--disable-dev-shm-usage')
+# driver = webdriver.Chrome('/home/<user>/chromedriver',chrome_options=chrome_options)
+
+# try 2
+driver = webdriver.Chrome(ChromeDriverManager().install())
 
 # s = Service(‘Chromedriver PATH')
 # driver = webdriver.Chrome("/usr/local/bin/chromedriver")
