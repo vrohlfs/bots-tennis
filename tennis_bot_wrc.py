@@ -28,30 +28,11 @@ t = os.environ['CONFIRM_TIME']
 
 
 ## Driver settings
-# try 1
-# options = Options()
-# chrome_options = Options()
-# chrome_options.add_argument('--headless')
-# chrome_options.add_argument('--no-sandbox')
-# chrome_options.add_argument('--disable-dev-shm-usage')
-# driver = webdriver.Chrome('/home/<user>/chromedriver',chrome_options=chrome_options)
-
-# try 2
-# driver = webdriver.Chrome(ChromeDriverManager().install())
-
-# try 3
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-
-# s = Service(‘Chromedriver PATH')
-# driver = webdriver.Chrome("/usr/local/bin/chromedriver")
-# driver = webdriver.Chrome(ChromeDriverManager().install())
-# driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-# options.binary_location = "/usr/bin/google-chrome"
-# driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options, executable_path="/usr/local/bin/chromedriver")
 
 actions = ActionChains(driver)
 driver.get("https://wtc.clubautomation.com/")
-wait = WebDriverWait(driver, 60)
+wait = WebDriverWait(driver, 120)
 
 ## Details
 game_date = date.today() + timedelta(days=2)
