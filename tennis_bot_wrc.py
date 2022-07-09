@@ -51,7 +51,7 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 actions = ActionChains(driver)
 driver.get("https://wtc.clubautomation.com/")
-wait = WebDriverWait(driver, 30)
+wait = WebDriverWait(driver, 60)
 
 ## Details
 game_date = date.today() + timedelta(days=2)
