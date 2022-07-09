@@ -16,7 +16,7 @@ jobs:
       - name: Build
         run: |
           python -m pip install selenium
-          python -m pip install webdriver-manager
+          python -m pip install webdriver_manager
       - name: execute py script # run the run.py to get the latest data
         run: |
           python tennis_bot_wrc.py
