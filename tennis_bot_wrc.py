@@ -58,8 +58,8 @@ game_date = date.today() + timedelta(days=2)
 game_date = game_date.strftime("%m/%d/%Y") 
 
 # Website Login
-login_form = driver.find_element(By.ID, "signin_login_form")
-un = driver.find_element_by_name("login")
+login_form = driver.find_element(By.ID, "caSignInLoginForm")
+un = driver.find_element(By.Name, "login")
 un.send_keys(username)
 
 actions.send_keys(Keys.TAB).perform()
@@ -105,3 +105,5 @@ wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="confirm"]'))).click()
 
 # close entire browser
 #driver.quit()
+
+print("Win the match now. Ass: your bot!")
