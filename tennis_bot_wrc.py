@@ -27,6 +27,7 @@ t = os.environ['CONFIRM_TIME']
 
 
 ## Driver settings
+options = Options()
 options.binary_location = "/usr/bin/google-chrome"
 # s = Service(‘Chromedriver PATH')
 # driver = webdriver.Chrome("/usr/local/bin/chromedriver")
