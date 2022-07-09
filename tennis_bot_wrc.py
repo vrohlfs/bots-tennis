@@ -9,6 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 
@@ -26,12 +27,14 @@ t = os.environ['CONFIRM_TIME']
 
 
 ## Driver settings
+options.binary_location = "/usr/bin/google-chrome"
 # s = Service(‘Chromedriver PATH')
 # driver = webdriver.Chrome("/usr/local/bin/chromedriver")
 # driver = webdriver.Chrome(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-actions = ActionChains(driver)
+# driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options, executable_path="/usr/local/bin/chromedriver")
 
+actions = ActionChains(driver)
 driver.get("https://wtc.clubautomation.com/")
 wait = WebDriverWait(driver, 30)
 
