@@ -58,7 +58,7 @@ game_date = date.today() + timedelta(days=2)
 game_date = game_date.strftime("%m/%d/%Y") 
 
 # Website Login
-login_form = driver.find_element_by_id("signin_login_form")
+login_form = driver.find_element(By.ID, "signin_login_form")
 un = driver.find_element_by_name("login")
 un.send_keys(username)
 
