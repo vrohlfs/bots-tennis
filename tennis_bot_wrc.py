@@ -56,8 +56,9 @@ driver.get("https://wtc.clubautomation.com/event/reserve-court-new")
 # wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="addParticipant"]'))).click()
 # wait.until(EC.element_to_be_clickable((By.ID,"addParticipant"))).click() 
 # guest = wait.until(EC.visibility_of_element_located((By.ID,"guest_1")))
-wait.until(EC.presence_of_element_located((By.ID,"guest_1")));
-guest = driver.find_element(By.ID,"guest_1")
+# wait.until(EC.presence_of_element_located((By.ID,"guest_1")));
+# guest = driver.find_element(By.ID,"guest_1")
+guest = wait.until(EC.visibility_of_element_located((By.ID,"guest_1")))
 guest.send_keys(guest_name)
 # wait.until(EC.element_to_be_clickable((By.ID,"ui-id-3"))).click()
 # # guest_field = driver.find_element(By.XPATH, '//*[@id="guest_1-wrapper"]/span[1]/span')
