@@ -53,8 +53,9 @@ login_form.submit()
 driver.get("https://wtc.clubautomation.com/event/reserve-court-new")
 
 # Who will host? -> Add guest
-wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="addParticipant"]'))).click()
-# wait.until(EC.element_to_be_clickable((By.ID,"addParticipant"))).click()
+# wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="addParticipant"]'))).click()
+wait.until(EC.element_to_be_clickable((By.ID,"addParticipant"))).click() 
+# //*[@id="guest_1-wrapper"]/span[1]/span
 guest = wait.until(EC.visibility_of_element_located((By.ID,"guest_1")))
 guest.send_keys(guest_name)
 wait.until(EC.element_to_be_clickable((By.ID,"ui-id-3"))).click()
